@@ -1,0 +1,49 @@
+# Project: Ejercicio2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o ComponenteEquipo.o Disco.o Tarjeta.o Bus.o VisitanteEquipo.o VisitantePrecio.o VisitantePrecioDetalle.o
+LINKOBJ  = main.o ComponenteEquipo.o Disco.o Tarjeta.o Bus.o VisitanteEquipo.o VisitantePrecio.o VisitantePrecioDetalle.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Ejercicio2.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+ComponenteEquipo.o: ComponenteEquipo.cpp
+	$(CPP) -c ComponenteEquipo.cpp -o ComponenteEquipo.o $(CXXFLAGS)
+
+Disco.o: Disco.cpp
+	$(CPP) -c Disco.cpp -o Disco.o $(CXXFLAGS)
+
+Tarjeta.o: Tarjeta.cpp
+	$(CPP) -c Tarjeta.cpp -o Tarjeta.o $(CXXFLAGS)
+
+Bus.o: Bus.cpp
+	$(CPP) -c Bus.cpp -o Bus.o $(CXXFLAGS)
+
+VisitanteEquipo.o: VisitanteEquipo.cpp
+	$(CPP) -c VisitanteEquipo.cpp -o VisitanteEquipo.o $(CXXFLAGS)
+
+VisitantePrecio.o: VisitantePrecio.cpp
+	$(CPP) -c VisitantePrecio.cpp -o VisitantePrecio.o $(CXXFLAGS)
+
+VisitantePrecioDetalle.o: VisitantePrecioDetalle.cpp
+	$(CPP) -c VisitantePrecioDetalle.cpp -o VisitantePrecioDetalle.o $(CXXFLAGS)
