@@ -12,13 +12,13 @@ import java.util.ArrayList;
  * @author ernes
  */
 public class FilterManager {
-    private FilterChain chain;
+    private FilterChain chain = new FilterChain();
     
     public void addFilter(Filter filter){
         this.chain.addFilter(filter);
     }
     
-    void requestFilter(double revoluciones, EstadoMotor estadoMotor) {
-        this.chain.execute(revoluciones, estadoMotor);
+    public double requestFilter(double revoluciones, EstadoMotor estadoMotor) {
+        return this.chain.execute(revoluciones, estadoMotor);
     }
 }

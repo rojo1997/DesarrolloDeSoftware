@@ -7,13 +7,13 @@ package com.ds.intercepcion;
 
 /**
  *
- * @author ernes
+ * @author Ernesto Martínez del Pino
  */
 public class RepercutirRozamiento implements Filter {
 
     @Override
     public double execute(double revoluciones, EstadoMotor estadoMotor) {
-        return revoluciones;
+        return revoluciones - 1;
     }
 
 }

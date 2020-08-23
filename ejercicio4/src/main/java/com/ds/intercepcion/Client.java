@@ -7,12 +7,16 @@ package com.ds.intercepcion;
 
 /**
  *
- * @author ernes
+ * @author Ernesto Martínez del Pino
  */
 public class Client {
     private FilterManager manager;
     
-    public void sendRequest(double revoluciones, EstadoMotor estadoMotor){
-        this.manager.requestFilter(revoluciones, estadoMotor);
+    public Client(FilterManager manager) {
+    	this.manager = manager;
+    }
+    
+    public double sendRequest(double revoluciones, EstadoMotor estadoMotor){
+        return this.manager.requestFilter(revoluciones, estadoMotor);
     }
 }

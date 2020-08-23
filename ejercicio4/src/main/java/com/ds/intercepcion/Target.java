@@ -10,7 +10,9 @@ package com.ds.intercepcion;
  * @author ernes
  */
 class Target {
-    public void execute(double revoluciones, EstadoMotor estadoMotor){
-        
+	private double r = 0.15;
+	
+    public double execute(double revoluciones, EstadoMotor estadoMotor){
+    	return 2 * Math.PI * this.r * revoluciones * (60.0 / 1000.0);
     }
 }

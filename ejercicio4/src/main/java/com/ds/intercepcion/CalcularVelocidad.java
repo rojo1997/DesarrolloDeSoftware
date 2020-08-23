@@ -7,21 +7,21 @@ package com.ds.intercepcion;
 
 /**
  *
- * @author ernes
+ * @author Ernesto Martínez del Pino
  */
 public class CalcularVelocidad implements Filter {
     private double incrementoVelocidad = 0.0;
     
     @Override
     public double execute(double revoluciones, EstadoMotor estadoMotor){
-        if (estadoMotor == EstadoMotor.APAGADO || estadoMotor == EstadoMotor.APAGADO){
-            this.incrementoVelocidad += 0;
-        } else if (estadoMotor == EstadoMotor.FRENADO) {
+        if (estadoMotor == EstadoMotor.APAGADO){
+            this.incrementoVelocidad = 0;
+        } else if (estadoMotor == EstadoMotor.FRENADO && estadoMotor == EstadoMotor.ENCENDIDO) {
             this.incrementoVelocidad -= 100;
-        } else if (estadoMotor == EstadoMotor.ACELERANDO) {
+        } else if (estadoMotor == EstadoMotor.ACELERANDO  && estadoMotor == EstadoMotor.ENCENDIDO) {
             this.incrementoVelocidad += 100;
         }
-        return revoluciones + this.incrementoVelocidad;
+        return  revoluciones + this.incrementoVelocidad;
     }
     
 }

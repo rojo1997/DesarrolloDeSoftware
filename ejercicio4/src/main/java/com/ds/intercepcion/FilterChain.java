@@ -13,16 +13,16 @@ import java.util.ArrayList;
  */
 public class FilterChain {
     private final ArrayList<Filter> filters = new ArrayList<>();
-    private Target target;
+    private Target target = new Target();
     
     public void addFilter(Filter filter){
         this.filters.add(filter);
     }
     
-    public void execute(double revoluciones, EstadoMotor estadoMotor){
+    public double execute(double revoluciones, EstadoMotor estadoMotor){
         this.filters.forEach((filter) -> {
             filter.execute(revoluciones, estadoMotor);
         });
-        this.target.execute(revoluciones, estadoMotor);
+        return this.target.execute(revoluciones, estadoMotor);
     }
 }
