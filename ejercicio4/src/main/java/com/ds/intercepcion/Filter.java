@@ -7,7 +7,7 @@ package com.ds.intercepcion;
 
 /**
  *
- * @author ernes
+ * @author Ernesto Martínez del Pino
  */
 public interface Filter {
     public double execute(double revoluciones, EstadoMotor estadoMotor);

@@ -1,5 +1,9 @@
 package com.ds.intercepcion;
 
+/**
+*
+* @author Ernesto Martínez del Pino
+*/
 public class Coche {
 	private double revoluciones = 0.0;
 	private EstadoMotor estadoMotor = EstadoMotor.APAGADO;

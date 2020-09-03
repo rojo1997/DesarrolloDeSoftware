@@ -1,11 +1,15 @@
 package com.ds.intercepcion;
 
-import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
-import javax.swing.JToggleButton;
-
+/**
+*
+* @author Ernesto Martínez del Pino
+*/
 public class app extends javax.swing.JFrame implements Runnable {
+	
 	private Salpicadero salpicadero = new Salpicadero();
 	private PanelBotones panelBotones;
 	
@@ -48,6 +52,11 @@ public class app extends javax.swing.JFrame implements Runnable {
 	
 	public static void main(String args[]) {
 		app my_app = new app();
+		my_app.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
 		Thread th = new Thread(my_app);
 		th.start();
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ernes
+ * @author Ernesto Martínez del Pino
  */
 public class FilterManager {
     private FilterChain chain = new FilterChain();

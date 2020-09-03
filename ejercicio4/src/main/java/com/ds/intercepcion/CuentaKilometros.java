@@ -7,6 +7,10 @@ import java.time.LocalDateTime;
 
 import javax.swing.BorderFactory;
 
+/**
+*
+* @author Ernesto Martínez del Pino
+*/
 public class CuentaKilometros extends javax.swing.JPanel {
 	private double accKilometros = 0.0;
 	private LocalDateTime tiempoAnterior = LocalDateTime.now();

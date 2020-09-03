@@ -5,6 +5,10 @@ import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
 
+/**
+*
+* @author Ernesto Martínez del Pino
+*/
 public class Salpicadero extends javax.swing.JPanel {
 	private Velocimetro velocimetro = new Velocimetro();
 	private CuentaKilometros cuentaKilometros = new CuentaKilometros();

@@ -5,6 +5,10 @@ import java.text.NumberFormat;
 
 import javax.swing.BorderFactory;
 
+/**
+*
+* @author Ernesto Martínez del Pino
+*/
 public class Velocimetro extends javax.swing.JPanel {
 	private NumberFormat nf = NumberFormat.getNumberInstance();
 	
