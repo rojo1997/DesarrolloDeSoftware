@@ -9,11 +9,16 @@ package com.ds.intercepcion;
  *
  * @author Ernesto Martínez del Pino
  */
-public class RepercutirRozamiento implements Filter {
+public class FiltroRepercutirRozamiento implements Filter {
 
     @Override
     public double execute(double revoluciones, EstadoMotor estadoMotor) {
-        return revoluciones - 1;
+    	if (revoluciones == 0.0) {
+        	return revoluciones;
+        }
+    	else {
+    		return revoluciones - 1;
+    	}
     }
 
 }

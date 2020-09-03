@@ -14,8 +14,12 @@ import java.util.ArrayList;
 public class FilterManager {
     private FilterChain chain = new FilterChain();
     
-    public void addFilter(Filter filter){
+    public void addFilter(Filter filter) {
         this.chain.addFilter(filter);
+    }
+    
+    public void setTarget(Target target) {
+    	this.chain.setTarget(target);
     }
     
     public double requestFilter(double revoluciones, EstadoMotor estadoMotor) {

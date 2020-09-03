@@ -9,19 +9,30 @@ package com.ds.intercepcion;
  *
  * @author Ernesto Martínez del Pino
  */
-public class CalcularVelocidad implements Filter {
+public class FiltroCalcularVelocidad implements Filter {
     private double incrementoVelocidad = 0.0;
+    private static double MAX_REVOLUCIONES = 5000.0;
+    private static double MIN_REVOLUCIONES = 0.0;
     
     @Override
     public double execute(double revoluciones, EstadoMotor estadoMotor){
-        if (estadoMotor == EstadoMotor.APAGADO){
+    	System.out.println("FiltroCalcularVelocidad: " + estadoMotor);
+        if (estadoMotor.equals(EstadoMotor.APAGADO) || estadoMotor.equals(EstadoMotor.ENCENDIDO)){
             this.incrementoVelocidad = 0;
-        } else if (estadoMotor == EstadoMotor.FRENADO && estadoMotor == EstadoMotor.ENCENDIDO) {
+        } else if (estadoMotor.equals(EstadoMotor.FRENADO)) {
             this.incrementoVelocidad -= 100;
-        } else if (estadoMotor == EstadoMotor.ACELERANDO  && estadoMotor == EstadoMotor.ENCENDIDO) {
+        } else if (estadoMotor.equals(EstadoMotor.ACELERANDO)) {
             this.incrementoVelocidad += 100;
         }
-        return  revoluciones + this.incrementoVelocidad;
+        revoluciones = revoluciones + this.incrementoVelocidad;
+        if (revoluciones > FiltroCalcularVelocidad.MAX_REVOLUCIONES) {
+        	revoluciones = FiltroCalcularVelocidad.MAX_REVOLUCIONES;
+        }
+        if (revoluciones < FiltroCalcularVelocidad.MIN_REVOLUCIONES) {
+        	revoluciones = FiltroCalcularVelocidad.MIN_REVOLUCIONES;
+        }
+        System.out.println("FiltroCalcularVelocidad: " + revoluciones);
+        return  revoluciones;
     }
     
 }
