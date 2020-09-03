@@ -20,6 +20,11 @@ import javax.swing.BorderFactory;
  * @author Ernesto Martínez del Pino
  */
 public class PanelBotones extends javax.swing.JPanel {
+	private javax.swing.JToggleButton BotonAcelerar, BotonEncender, BotonFrenar;
+    private javax.swing.JLabel EtiqMostrarEstado;
+    private Client cliente;
+    private Coche coche = new Coche();
+    private static int UPDATE_TIME = 1;
 
     public PanelBotones(Client cliente) {
     	super();
@@ -85,13 +90,7 @@ public class PanelBotones extends javax.swing.JPanel {
         this.add(this.EtiqMostrarEstado);
         
     }
-
-    private javax.swing.JToggleButton BotonAcelerar, BotonEncender, BotonFrenar;
-    private javax.swing.JLabel EtiqMostrarEstado;
-    private Client cliente;
-    private Coche coche = new Coche();
-    private static int UPDATE_TIME = 1;
-    
+	
     synchronized private void BotonAcelerarActionPerformed(java.awt.event.ActionEvent evt) {
     	System.out.println("Acelerar");
     	if (this.BotonEncender.isSelected() && !this.BotonFrenar.isSelected()) {

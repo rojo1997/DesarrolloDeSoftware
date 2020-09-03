@@ -11,6 +11,7 @@ import javax.swing.BorderFactory;
 */
 public class Velocimetro extends javax.swing.JPanel {
 	private NumberFormat nf = NumberFormat.getNumberInstance();
+	private javax.swing.JLabel EtiqMostrarVelocidad;
 	
 	public Velocimetro() {
 		super();
@@ -33,8 +34,6 @@ public class Velocimetro extends javax.swing.JPanel {
 		
 		this.add(this.EtiqMostrarVelocidad);
 	}
-	
-	private javax.swing.JLabel EtiqMostrarVelocidad;
 	
 	public void updateVelocidad(double velocidad) {
 		this.EtiqMostrarVelocidad.setText(this.nf.format(velocidad) + " km/h");

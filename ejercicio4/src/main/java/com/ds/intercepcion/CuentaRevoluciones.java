@@ -15,7 +15,8 @@ public class CuentaRevoluciones extends javax.swing.JPanel {
 	private double accRevoluciones = 0.0;
 	private LocalDateTime tiempoAnterior = LocalDateTime.now();
 	private NumberFormat nf = NumberFormat.getNumberInstance();
-	
+	private javax.swing.JLabel EtiqMostrarRevoluciones;
+
 	public CuentaRevoluciones() {
 		super();
 		this.panelConfig();
@@ -30,15 +31,9 @@ public class CuentaRevoluciones extends javax.swing.JPanel {
 	
 	private void initComponents() {
 		this.EtiqMostrarRevoluciones = new javax.swing.JLabel();
-		
-		//this.EtiqMostrarRevoluciones.setSize(140, 40);
-		
 		this.EtiqMostrarRevoluciones.setText("0 revoluciones");
-		
 		this.add(this.EtiqMostrarRevoluciones);
 	}
-	
-	private javax.swing.JLabel EtiqMostrarRevoluciones;
 	
 	public void updateRevoluciones(double revoluciones) {
 		LocalDateTime tiempoAhora = LocalDateTime.now();

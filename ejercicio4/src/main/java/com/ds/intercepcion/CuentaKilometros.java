@@ -15,7 +15,8 @@ public class CuentaKilometros extends javax.swing.JPanel {
 	private double accKilometros = 0.0;
 	private LocalDateTime tiempoAnterior = LocalDateTime.now();
 	private NumberFormat nf = NumberFormat.getNumberInstance();
-	
+	private javax.swing.JLabel EtiqMostrarKilometros;
+
 	public CuentaKilometros() {
 		super();
 		this.panelConfig();
@@ -33,8 +34,6 @@ public class CuentaKilometros extends javax.swing.JPanel {
 		this.EtiqMostrarKilometros.setText("0 km");
 		this.add(this.EtiqMostrarKilometros);
 	}
-	
-	private javax.swing.JLabel EtiqMostrarKilometros;
 	
 	public void updateKilometros(double velocidad) {
 		LocalDateTime tiempoAhora = LocalDateTime.now();
